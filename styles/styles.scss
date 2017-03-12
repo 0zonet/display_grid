@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+// Definir las filas y columnas con display grid
+body{
+    background-color: #f2f2f4;
+    display: grid;
+
+    //Cantidad de columnas y tamaño de cada una
+    -ms-grid-columns: 20% 50% 30%;
+    //Cantidad de filas y tamaño de cada una
+    -ms-grid-rows: 25vh 50vh  25vh;
+}
+
+main, aside, header, footer{
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 2em;
+
+    /*Texto centrado de manera absoluta*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main{
+    background: tomato;
+    //Asignar la fila en que estara el elemento
+    -ms-grid-row: 2;
+    //Define en que columna comienza el flujo del elemento
+    -ms-grid-column: 2;
+    //Define cuantas columnas tiene el flujo del elemento
+    -ms-grid-column-span: 3;
+}
+
+aside{
+    background: lightgreen;
+    -ms-grid-row: 2;
+}
+
+footer{
+    background: steelblue;
+    -ms-grid-row: 3;
+    -ms-grid-column-span: 3;
+}
+
+header{
+    background: gold;
+    -ms-grid-column-span: 3;
+}
+
+
+@media screen and(max-width: 1000px){
+    body{
+        -ms-grid-rows: 25vh 25vh 25vh 25vh;
+    }
+
+    main{
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+         -ms-grid-column-span: 3;
+    }
+
+    aside{
+        -ms-grid-column-span: 3;
+    }
+
+    footer{
+        -ms-grid-row: 1;
+    }
+
+    header{
+        -ms-grid-row: 4;
+    }
+}
+
